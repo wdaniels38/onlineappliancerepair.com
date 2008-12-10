@@ -1,0 +1,33 @@
+<div id="main">
+	<div id="banner">
+	<%= image_tag("ad.png", {:alt => 'online appliance repair'}) %>
+	</div>
+	<h1>online appliance repair, why fix it myself?</h1>
+	<p>
+	Online appliance repair will help you save money on service calls, labor cost,
+	and the mark up on parts. Service calls <b><i>average between $45-$79</i></b>, while labor
+	can <b><i>cost you between $60-$120</i></b>, and parts are generally <b><i>marked up between 100% and 300%</i></b>. 
+	</p>
+	<p>
+	Imagine how much money you will save when for just $29.95 you can purchase and watch a video on your computer that will help you repair the
+	most common problems with appliances so get started today by choosing your appliance to the right.
+	</p>
+	<p style="font-size:95%;">
+	Don't see your appliance? <u>No problem just click here and we will try to add it for you.</u>
+	</p>
+	
+	<h2>recently added repair videos</h2>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+	<span class="box"></span>
+</div>
+<div id="side">
+	<h3>browse by appliance</h3>
+	<ul>
+		<% @appliance.each do |a| %>
+		<li class="appliances"><%= link_to a.appliance, :controller => "appliances", :action => "view", :id => a.slug %></li> 
+		<% end %>
+	</ul>
+</div>

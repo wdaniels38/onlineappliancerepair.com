@@ -1,0 +1,29 @@
+ <h1>sign in to your account</h1>
+ 
+ <div id="login_wrapper">
+	<% form_tag(:action => 'send_login') do %>
+	<% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
+	
+	<table style="margin:10px 0px">
+		<tr style="height:40px;">
+			<td><label for="username">username:</label></td>
+			<td><%= text_field_tag('user_id', params[:user_id]) %></td>
+		</tr>
+		<tr style="height:40px;">
+			<td><label for="password">password:</label></td>
+			<td><%= password_field_tag('password') %></td>
+		</tr>
+
+		<tr style="height:40px;">
+			<td style="font-size:80%;"><%= check_box('remember', '') %> remember me</td>
+		</tr>
+		
+		<tr>
+			<td colspan=2 ><%= submit_tag :Login %></td>
+		</tr>
+	</table>
+
+	 <% end %>
+	<p style="font-size:75%; margin-top:0px;">Forgot your password?</p>
+	
+</div>

@@ -1,0 +1,212 @@
+body
+{
+	margin:30px auto;
+	font-family: Arial, Helvetica, sans-serif;;
+	color:#8c8b8b;
+	font-size:95%;
+	background-color:#000;
+	min-width: 920px;
+}
+
+#wrapper
+{
+	width:900px;
+	height:auto;
+	margin:0px auto;	
+	background-color:#fff;
+	border:1px solid #999;
+}
+
+#header
+{
+	margin:0px auto;
+	width:900px;
+	height:125px;
+	border-bottom:5px solid #888;
+	text-align:center;
+	background:url(/images/header_background.png);
+	background-color:#2d822f;		
+}
+
+#container
+{
+	width:900px;
+	height:auto;
+	min-height:500px;
+	margin:0px auto 50px;
+}
+
+#left
+{
+	width:165px;
+	height:auto;
+	float:left;
+}
+
+#main
+{
+	width:694px;
+	height:auto;
+	float:left;
+	padding:0px 20px;
+}
+
+#navigation
+{
+	margin-top:0px;	
+}
+
+#navigation li 
+{
+	font-size:90%;
+	height:25px;
+	width:144px;
+	border-bottom:1px solid #999;
+	border-right:1px solid #999;
+	color:#fff;
+	padding-bottom:10px;
+	padding-left:20px;
+	line-height:35px;
+	background-color:#aaa;
+	
+}
+
+#navigation span a
+{
+	color:#fff;
+}
+
+/* Login Styles */
+
+#login_wrapper
+{
+	width: 500px;
+	height:auto;
+	border:7px solid #999;
+	margin:60px auto 0px;
+	text-align:center;		
+}
+
+.notice
+{
+	color:red;
+	margin-top:15px;
+	text-transform:lowercase;
+	font-size:90%;
+}
+
+#admin
+{
+	width:734px;
+	text-align:right;
+	height:30px;
+	line-height:30px;
+	font-size:90%;
+	float:left;
+	border-bottom:1px dotted #ccc;
+}
+
+#admin p
+{
+	padding-right:10px;
+}
+
+#add_new
+{
+	border:1px solid #ccc;
+	padding-left:20px;
+	margin-top:20px;
+	margin-bottom:30px;
+	width:580px;
+}
+
+
+
+/*-------------------------------------------------------------------------------------*/
+
+h1, h2
+{
+	color:#2d822f;
+	font-size:160%;
+	margin-bottom:10px;
+	text-transform:lowercase;	
+}
+
+h3
+{
+	color:#777;
+	font-size:125%;
+	margin-bottom:10px;
+	margin-top:0px;
+	text-transform:lowercase;	
+}
+p
+{
+	line-height:23px;
+	margin-top:5px;
+}
+
+ul
+{
+	margin-top:10px;
+	line-height:26px;
+	margin-left:0px;
+	padding-left:0px;
+	list-style:none;
+	font-size:120%;
+}
+
+span.box
+{
+	width:100px;
+	height:100px;
+	background:#ccc;
+	display:block;
+	float:left;
+	margin-top:10px;
+	margin-right:20px;
+}
+
+li.admin_appliances
+{
+	text-transform:lowercase;
+	list-style: square;
+	margin-left:20px;
+	padding-left:0px;
+	line-height:28px;	
+}
+
+li.admin_appliances a, li.admin_appliances a:visited
+{
+	font-size:85%;	
+	color:#8c8b8b;
+	text-decoration:none;
+	outline:none;
+}
+
+li.admin_appliances a:hover
+{	
+	color:#2d822f;
+	outline:none;
+}
+
+li.brands
+{
+	list-style: square;
+	text-transform:lowercase;
+	margin-left:30px;
+}
+
+/* Links */
+
+#navigation a, #navigation a:visited
+{
+	color: #fff;
+	text-decoration:none;
+	outline:none;
+}
+
+#navigation a:hover
+{
+	color: #2d822f;
+}	

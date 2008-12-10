@@ -1,0 +1,32 @@
+<h1>appliances</h1>
+
+<p>click on an appliance to edit the brands, tools, and problems for that appliance</p>
+
+<% @appliance.each do |a| %>
+
+<li class="admin_appliances"><%= link_to a.appliance, :controller => "admin", :action => "appliance_options", :id => a.slug %> 
+
+[ <%= link_to_function "edit", visual_effect(:toggle_appear, "edit" + (a.id).to_s, :duration => 0.1)%>
+
+| <%= link_to "delete", {:action => 'delete_appliance', :id => a.id}, :confirm => "Are you sure?" %> ]</li> 
+
+<div id="edit<%= a.id %>" style="display:none; margin-left:25px; font-size:85%;">
+<% form_for @update_appliance, :url => { :action => 'update_appliance', :id => a.id } do |f| %>
+appliance: <%= f.text_field :appliance, :value => a.appliance, :size => '25' %> &nbsp;&nbsp; slug:<%= f.text_field :slug, :value => a.slug, :size => '20' %>
+<%= submit_tag 'Update Appliance' %>	
+<% end %>	
+</div>
+
+<% end %>
+
+
+<div id="add_new">
+<h2>add a new appliance</h2>
+
+<% form_for @new_appliance, :url => { :action => 'add_appliance' } do |f| %>
+
+appliance: <%= f.text_field :appliance, :size => '25' %> &nbsp;&nbsp; slug:<%= f.text_field :slug, :size => '20' %>
+<%= submit_tag 'Add Appliance' %>
+
+<% end %>
+</div>

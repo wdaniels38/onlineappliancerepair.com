@@ -1,0 +1,13 @@
+<h1>Video: <%= @brand.brand %> <%= @appliance.appliance %></h1>
+<h4>Problem: <%= @problem.problem %> </h4>
+
+<% @video.each do |a| %>
+<li class="admin_appliances"><%= a.title %></li>
+<% end %>
+	
+<% form_remote_tag :url => { :action => 'add_video' }, :update => 'videos' %>
+<%= hidden_field :appliance_id, :value => (params[:appliance]) %>
+<%= hidden_field :brand_id, :value => (params[:brand]) %>
+<%= hidden_field :appliance_problem_id, :value => (params[:problem]) %>
+video title: <%= text_field_tag :title %>
+<%= submit_tag 'Add Appliance' %>

@@ -1,0 +1,23 @@
+
+
+<h1>Video: <%= @brand.brand %> <%= @appliance.appliance %></h1>
+<h4>Problem: <%= @problem.problem %> </h4>
+
+
+<div id="videos">
+<%= render(:partial => 'video', :collection => @video) %>
+</div>
+
+<% form_remote_for @new_video, :url => { :action => 'add_video' }, :update => 'videos' do |f| %>
+<%= f.hidden_field :appliance_id, :value => @appliance.id %>
+<%= f.hidden_field :brand_id, :value => @brand.id %>
+<%= f.hidden_field :appliance_problem_id, :value => @problem.id %>
+video title: <%= f.text_field :title %>
+<%= submit_tag 'Add Video' %>
+
+<% end %>
+
+
+
+
+

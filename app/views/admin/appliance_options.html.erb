@@ -1,0 +1,70 @@
+<h1>options for <%= @appliance.appliance %></h1>
+
+<h3>Brands</h3>
+<% @brand.each do |b| %>
+<li class="admin_appliances"><%= b.brand %> 
+[ <%= link_to "delete", {:action => 'delete_appliance_brand', :id => b.id}, :confirm => "Are you sure?" %> ]</li>
+<% end %>
+
+<div id="add_new" style="width:300px;">
+<h2>add a new brand</h2>
+<% form_for @new_appliance_brand, :url => { :action => 'add_appliance_brand' } do |f| %>
+<%= f.hidden_field :appliance_id, :value => @appliance.id %>
+appliance: <%= collection_select(:appliance_brand, :brand, @brands, :brand, :brand) %>
+<%= submit_tag 'Add Brand' %>
+<% end %>
+</div>
+
+<hr />
+<br>
+
+<h3>Problems</h3>
+<% @appliance_problem.each do |a| %>
+<li class="admin_appliances"><%= a.problem%>
+[ <%= link_to_function "edit", visual_effect(:toggle_appear, "appliance_problem" + (a.id).to_s, :duration => 0.1)%>
+| <%= link_to "delete", {:action => 'delete_appliance_problem', :id => a.id}, :confirm => "Are you sure?" %> ]</li> 
+
+<div id="appliance_problem<%= a.id %>" style="display:none; margin-left:25px; font-size:85%;">
+<% form_for @update_appliance_problem, :url => { :action => 'update_appliance_problem', :id => a.id } do |f| %>
+appliance: <%= f.text_field :problem, :value => a.problem, :size => '50' %>
+<%= submit_tag 'Update Problem' %>	
+<% end %>	
+</div>
+
+<% end %>
+
+<div id="add_new">
+<h2>add a problem</h2>
+<% form_for @new_appliance_problem, :url => { :action => 'add_appliance_problem' } do |f| %>
+<%= f.hidden_field :appliance_id, :value => @appliance.id %>
+problem: <%= f.text_field :problem, :size => '55' %>
+<%= submit_tag 'Add Problem' %>
+<% end %>
+</div>
+
+<hr	 />
+<br>
+
+<h3>Tools</h3>
+<% @appliance_tools.each do |a| %>
+<li class="admin_appliances"><%= a.tools%>
+[ <%= link_to_function "edit", visual_effect(:toggle_appear, "appliance_tool" + (a.id).to_s, :duration => 0.1)%>
+| <%= link_to "delete", {:action => 'delete_appliance_tool', :id => a.id}, :confirm => "Are you sure?" %> ]</li> 
+
+<div id="appliance_tool<%= a.id %>" style="display:none; margin-left:25px; font-size:85%;">
+<% form_for @update_appliance_tool, :url => { :action => 'update_appliance_tool', :id => a.id } do |f| %>
+appliance: <%= f.text_field :tools, :value => a.tools, :size => '20' %>
+<%= submit_tag 'Update Tool' %>	
+<% end %>	
+</div>
+
+<% end %>
+
+<div id="add_new" style="width:300px;">
+<h2>add a tool</h2>
+<% form_for @new_appliance_tool, :url => { :action => 'add_appliance_tool' } do |f| %>
+<%= f.hidden_field :appliance_id, :value => @appliance.id %>
+Tool: <%= f.text_field :tools, :size => '20' %>
+<%= submit_tag 'Add Tool' %>
+<% end %>
+</div>

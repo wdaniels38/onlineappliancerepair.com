@@ -1,0 +1,8 @@
+<h1>a <%= @appliance.appliance %> great, tell us what brand you have.</h1>
+<ul>
+<% @brand.each do |b| %>
+<li class="appliances"><%= b.brand %></li>
+<% end %>
+</ul>
+
+<p>Don't see you brand listed? <u>No problem click here and we will try to add it for you.</u>

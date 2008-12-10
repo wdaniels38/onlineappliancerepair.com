@@ -1,0 +1,12 @@
+<div id="brands">
+
+<h1>Videos: Pick an Appliance</h1>	
+<% @appliance.each do |b| %>
+
+<li class="admin_appliances"><%= link_to_remote b.appliance, :url => {:action => "videos1", :appliance => b.id}, 
+:update => "brands" %></li>
+
+<% end %>
+
+
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Admin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<%= javascript_include_tag :all %>
+<%= stylesheet_link_tag "admin" %>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+		<%= image_tag("admin_header.png") %>
+			</div>
+	
+	<div id="container">
+	
+	<div id="left">
+		<ul id="navigation">
+			<li><%= link_to "home", :action => 'index' %></li>
+			<li><%= link_to "settings", :action => 'settings' %></li>
+			<li>users</li>
+			<li>orders</li>
+			<li><%= link_to "appliances", :action => 'appliances' %></li>
+			<li><%= link_to "brands", :action => 'brands' %></li>
+			<li><%= link_to "videos", :action => 'videos' %></li>
+		</ul>
+	</div>
+	
+	<% if session[:admin] %>
+		<div id="admin">
+		<p><%= "You are signed in as #{session[:admin]}" -%> | <%= link_to "sign out", :action => 'log_out' %></p>
+		</div>
+		<% end %>
+		
+	<div id="main">
+		<%= @content_for_layout %>
+	</div>
+			
+		<br style="clear:both" />
+	</div>
+	<div style="height:15px; width:900px; background-color:#2d822f; border-top:3px solid #777"></div>
+</div>
+
+</body>
+</html>

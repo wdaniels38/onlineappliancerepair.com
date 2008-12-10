@@ -1,0 +1,9 @@
+<h1>Videos: Pick a Brand</h1>	
+
+<% @brand.each do |b| %>
+
+<li class="admin_appliances"><%= link_to_remote b.brand, :url => {:action => "videos2", :appliance => (params[:appliance]), :brand => b.id},
+ :update => "brands" %>
+
+<% end %>
+

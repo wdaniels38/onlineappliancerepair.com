@@ -1,0 +1,5 @@
+<h1>Now that we know you have a <%= @appliance.appliance %> tell us what brand you have.</h1>
+
+<% @brand.each do |b| %>
+<li class="admin_appliances"><%= b.brand %></li>
+<% end %>

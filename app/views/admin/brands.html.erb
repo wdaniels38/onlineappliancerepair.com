@@ -1,0 +1,26 @@
+<h1>Brands</h1>
+
+<% @brand.each do |b| %>
+
+<li class="admin_appliances"><%= b.brand %> 
+	[ <%= link_to_function "edit", visual_effect(:toggle_appear, "edit_brand" + (b.id).to_s, :duration => 0.1)%>
+	| <%= link_to "delete", {:action => 'delete_brand', :id => b.id}, :confirm => "Are you sure?" %> ]
+</li>
+
+<div id="edit_brand<%= b.id %>" style="display:none; margin-left:25px; font-size:85%;">
+	<% form_for @update_brand, :url => { :action => 'update_brand', :id => b.id } do |f| %>
+	appliance: <%= f.text_field :brand, :value => b.brand, :size => '25' %> 
+	<%= submit_tag 'Update Brand' %>	
+	<% end %>
+</div>	
+
+<% end %>
+
+<div id="add_new">
+	<h2>add a new brand</h2>
+	
+	<% form_for @new_brand, :url => { :action => 'add_brand' } do |f| %>
+	brand: <%= f.text_field :brand, :size => '25' %>
+	<%= submit_tag 'Add Brand' %>
+	<% end %>
+</div>

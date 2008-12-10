@@ -1,0 +1,25 @@
+<div id="login_wrapper">
+	<% form_tag(:action => 'send_login') do %>
+	<h1 style="font-size:130%">control panel login</h1>
+	
+	<% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
+	
+	<table style="margin:10px auto">
+		<tr style="height:40px;">
+			<td><label for="username">username:</label></td>
+			<td><%= text_field_tag('username', params[:username]) %></td>
+		</tr>
+		<tr style="height:40px;">
+			<td><label for="password">password:</label></td>
+			<td><%= password_field_tag('password') %></td>
+		</tr>
+		<tr>
+			<td colspan=2 ><%= submit_tag :Login %></td>
+		</tr>
+	</table>
+	 <% end %>
+	<p style="font-size:75%; margin-top:0px;">Cookies must be turned on</p>
+	
+	
+	
+</div>

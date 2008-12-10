@@ -1,0 +1,17 @@
+<% form_for @brand do |f| %>
+
+
+<%= @appliance.appliance %>
+<br>
+<br>
+ID:	<%= f.hidden_field :appliance_id, :value => @appliance.id %>
+<br>
+<br>
+BRAND: <%= f.check_box :brand %>
+
+<%= f.collection_select :brand, @brand, :id, :brand %>
+
+<p>
+<%= submit_tag %>
+</p>
+<% end %>

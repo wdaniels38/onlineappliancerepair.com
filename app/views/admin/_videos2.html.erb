@@ -1,0 +1,18 @@
+<h1>Videos: Pick the Problem</h1>	
+
+<% @appliance_problem.each do |p| %>
+
+
+
+<li class="admin_appliances"><%= link_to p.problem, :action => "video_settings", :appliance => (params[:appliance]), :brand => (params[:brand]), :problem => p.id %>
+
+<%  @a = p.id end %>
+
+
+<% form_tag ( :action => 'video_settings' ) do %>
+<%= hidden_field_tag :appliance_id, (params[:appliance]) %>
+<%= hidden_field_tag :brand_id, (params[:brand]) %>
+<%= hidden_field_tag :appliance_problem_id, @a %>
+<%= submit_tag 'This is my problem' %>
+
+<% end %>

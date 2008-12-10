@@ -1,0 +1,2 @@
+module ApplianceBrandsHelper
+end
